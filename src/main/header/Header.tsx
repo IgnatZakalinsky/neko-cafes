@@ -14,9 +14,9 @@ const Header: React.FC<{setShowNavBar: () => void}> = ({setShowNavBar}) => {
                 neko-cafes
             </span>
 
-            <span className={s.menu} onClick={setShowNavBar}>
+            <button className={s.menu} onClick={setShowNavBar}>
                 menu
-            </span>
+            </button>
         </div>
     );
 };

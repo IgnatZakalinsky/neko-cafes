@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import s from './NavBar.module.css';
+import {NavLink} from "react-router-dom";
 
 const navLinks = [
     {title: 'Map(main)'},
@@ -17,7 +18,7 @@ const NavBar = () => {
     return (
         <div className={s.navBar}>
             {navLinks.map((n, i) =>
-                <span
+                <a
                     key={'NavBar-key-' + i}
                     style={{
                         color: checked === n ? '#f95' : '#111',
@@ -28,7 +29,7 @@ const NavBar = () => {
                     onClick={() => check(n)}
                 >
                     {n.title}
-                </span>
+                </a>
             )}
         </div>
     );
