@@ -19,15 +19,21 @@
 }
 .title {
     padding: 5px;
+    font-weight: bold;
 
     color: lime;
 }
 
 .menu {
     margin: 4px;
-    padding: 4px;
+    padding: 0 15px 4px;
+    font-weight: bold;
 
     color: lime;
     background: #222;
     border: 1px solid lime;
+    border-top-left-radius: 100px 37px;
+    border-top-right-radius: 100px 37px;
+    border-bottom-right-radius: 100px 37px;
+    border-bottom-left-radius: 100px 37px;
 }
