@@ -1,7 +1,7 @@
 import React from 'react';
 import s from './Header.module.css';
 
-const Header = () => {
+const Header: React.FC<{setShowNavBar: () => void}> = ({setShowNavBar}) => {
     return (
         <div className={s.header}>
             <img
@@ -14,7 +14,7 @@ const Header = () => {
                 neko-cafes
             </span>
 
-            <span className={s.menu}>
+            <span className={s.menu} onClick={setShowNavBar}>
                 menu
             </span>
         </div>

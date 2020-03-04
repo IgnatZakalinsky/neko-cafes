@@ -20,10 +20,12 @@ const NavBar = () => {
                 <span
                     key={'NavBar-key-' + i}
                     style={{
-                        color: checked === n ? 'red' : '#111',
+                        color: checked === n ? '#f95' : '#111',
                         background: checked === n ? '#111' : undefined,
+                        marginRight: i === navLinks.length - 1 ? 20 : undefined,
                     }}
                     className={s.span}
+                    onClick={() => check(n)}
                 >
                     {n.title}
                 </span>

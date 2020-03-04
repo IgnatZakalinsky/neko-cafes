@@ -21,15 +21,15 @@
     padding: 5px;
     font-weight: bold;
 
-    color: lime;
+    color: #afa;
 }
 
 .menu {
-    margin: 4px;
+    margin: 4px 20px 4px 4px;
     padding: 0 15px 4px;
     font-weight: bold;
 
-    color: lime;
+    color: #afa;
     background: #222;
     border: 1px solid lime;
     border-top-left-radius: 100px 37px;
