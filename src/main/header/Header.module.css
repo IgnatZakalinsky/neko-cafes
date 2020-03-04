@@ -1,0 +1,33 @@
+.header {
+    position: fixed;
+    height: 40px;
+    top: 0;
+    width: 100vw;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #111;
+}
+
+.img {
+    margin: 2px;
+    padding: 1px;
+
+    border: 1px solid lime;
+}
+.title {
+    padding: 5px;
+
+    color: lime;
+}
+
+.menu {
+    margin: 4px;
+    padding: 4px;
+
+    color: lime;
+    background: #222;
+    border: 1px solid lime;
+}
