@@ -1,22 +1,21 @@
 import React from 'react';
 import s from './Header.module.css';
+import Logo from "./logo/Logo";
+import Title from "./title/Title";
+import Menu from './menu/Menu';
 
-const Header: React.FC<{setShowNavBar: () => void}> = ({setShowNavBar}) => {
+type HeaderProps = {
+    setShowNavBar: () => void;
+}
+
+const Header: React.FC<HeaderProps> = ({setShowNavBar}) => {
     return (
         <div className={s.header}>
-            <img
-                src={'https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/84/84226265b403ae08d98bb4112886054e8f2699b8.jpg'}
-                alt={'logo'}
-                className={s.img}
-            />
+            <Logo/>
 
-            <span className={s.title}>
-                neko-cafes
-            </span>
+            <Title/>
 
-            <button className={s.menu} onClick={setShowNavBar}>
-                menu
-            </button>
+            <Menu setShowNavBar={setShowNavBar}/>
         </div>
     );
 };

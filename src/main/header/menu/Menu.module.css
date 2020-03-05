@@ -1,0 +1,13 @@
+.menu {
+    margin: 4px 20px 4px 4px;
+    padding: 4px 15px;
+    font-weight: bold;
+
+    color: #afa;
+    background: #222;
+    border: 1px solid lime;
+    border-top-left-radius: 100px 37px;
+    border-top-right-radius: 100px 37px;
+    border-bottom-right-radius: 100px 37px;
+    border-bottom-left-radius: 100px 37px;
+}

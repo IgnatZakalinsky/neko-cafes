@@ -1,5 +1,6 @@
 import React from 'react';
 import s from './Comments.module.css';
+import Comment from "./comment/Comment";
 
 const Comments = () => {
     const comments = [
@@ -8,10 +9,10 @@ const Comments = () => {
         {_id: 3, comment: '=^_^='},
     ];
 
-    const mappedComments = comments.map(c => <div key={c._id} className={s.comment}>{c.comment}</div>);
+    const mappedComments = comments.map(c => <Comment key={c._id} comment={c.comment}/>);
 
     return (
-        <div>
+        <div className={s.comments}>
             comments:
             {mappedComments}
         </div>

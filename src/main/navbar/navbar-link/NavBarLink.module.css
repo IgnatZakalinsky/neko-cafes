@@ -1,0 +1,9 @@
+.link {
+    margin: 2px;
+    padding: 2px 15px;
+    font-weight: bold;
+    border-top-left-radius: 100px 37px;
+    border-top-right-radius: 100px 37px;
+    border-bottom-right-radius: 100px 37px;
+    border-bottom-left-radius: 100px 37px;
+}
