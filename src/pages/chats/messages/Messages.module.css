@@ -1,0 +1,21 @@
+.chat {
+    display: flex;
+    justify-content: center;
+    margin: 4px;
+    padding: 4px 15px;
+    font-weight: bold;
+
+    /*color: #afa;*/
+    background: #333;
+    border: 1px solid lime;
+    border-top-left-radius: 100px 37px;
+    border-top-right-radius: 100px 37px;
+    border-bottom-right-radius: 100px 37px;
+    border-bottom-left-radius: 100px 37px;
+}
+
+.br {
+    height: 10px;
+    margin: 15px 0;
+    background: #55ff55;
+}
