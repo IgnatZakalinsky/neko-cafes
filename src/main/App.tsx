@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import s from './App.module.css';
 import Header from "./header/Header";
 import NavBar from "./navbar/NavBar";
-import Profile from "../pages/profile/Profile";
-import Chats from "../pages/chats/Chats";
+import {HashRouter} from "react-router-dom";
+import Routes from "./routes/Routes";
 
 const App = () => {
     const [showNavBar, setShowNavBar] = useState(false);
@@ -13,14 +13,18 @@ const App = () => {
     };
 
     return (
-        <div className={s.App}>
-            <Header setShowNavBar={() => setShowNavBar(!showNavBar)}/>
-            <div className={s.page}>
-                {showNavBar && <NavBar/>}
-                {/*<Profile/>*/}
-                <Chats closeNavBar={closeNavBar}/>
+        <HashRouter>
+            <div className={s.App}>
+                <Header setShowNavBar={() => setShowNavBar(!showNavBar)}/>
+
+                <div className={s.page}>
+                    {showNavBar && <NavBar/>}
+
+                    <Routes closeNavBar={closeNavBar}/>
+                </div>
             </div>
-        </div>
+        </HashRouter>
+
     );
 };
 

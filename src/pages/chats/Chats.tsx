@@ -5,6 +5,7 @@ import ChatFolders from "./folders/ChatFolders";
 import Messages from "./messages/Messages";
 
 export const CHECK_CHAT = 'check chat';
+export const ADD_FOLDER = 'add new';
 
 type ChatsProps = {
     closeNavBar: () => void;
@@ -31,7 +32,7 @@ const Chats: React.FC<ChatsProps> = ({closeNavBar}) => {
         ));
 
     // if adding new folder
-    if (checkedFolderId === '4' && checkedChatId !== '0') checkChatId('0');
+    if (checkedFolderId === ADD_FOLDER && checkedChatId !== '0') checkChatId('0');
 
     const checkedChat = chats.find(c => c._id === checkedChatId);
 

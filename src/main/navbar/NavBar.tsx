@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import s from './NavBar.module.css';
 import NavBarLink from "./navbar-link/NavBarLink";
+import {CHATS_PATH, MAP_PATH, PROFILE_PATH} from "../routes/Routes";
+import {useLocation} from 'react-router-dom';
 
 const navLinks = [
-    {title: 'Map(main)'},
+    {title: 'Map(main)', to: MAP_PATH},
     // {title: 'Cafes in point'},
-    {title: 'Chats'},
-    {title: 'Profile'},
+    {title: 'Chats', to: CHATS_PATH},
+    {title: 'Profile', to: PROFILE_PATH},
     // {title: 'Cafe'},
     // {title: 'Orders'},
     // {title: 'Chat'},
@@ -14,6 +16,9 @@ const navLinks = [
 
 const NavBar = () => {
     const [checked, check] = useState(navLinks[2]);
+    const location = useLocation();
+    if (location.pathname !== checked.to)
+        check(navLinks.find(n => n.to === location.pathname) || navLinks[2]);
 
     const mappedNavLinks = navLinks.map((n, i) =>
         <NavBarLink
@@ -22,6 +27,7 @@ const NavBar = () => {
             title={n.title}
             checked={checked === n}
             last={i === navLinks.length - 1}
+            to={n.to}
         />
     );
 
