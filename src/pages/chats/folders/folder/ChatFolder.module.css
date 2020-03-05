@@ -1,11 +1,13 @@
 .chatFolder, .end {
     padding: 10px 25px;
-    min-width: 50px;
+    margin: 3px;
+    min-width: 44px;
 
-    border-top-left-radius: 100px 37px;
-    border-top-right-radius: 100px 37px;
-    border-bottom-right-radius: 100px 37px;
-    border-bottom-left-radius: 100px 37px;
+    /*border-top-left-radius: 100px 37px;*/
+    /*border-top-right-radius: 100px 37px;*/
+    /*border-bottom-right-radius: 100px 37px;*/
+    /*border-bottom-left-radius: 100px 37px;*/
+    clip-path: polygon(25px 0, calc(100% - 25px) 0, 100% 50%, calc(100% - 25px) 100%, 25px 100%, 0 50%);
 }
 
 .end {

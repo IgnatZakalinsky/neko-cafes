@@ -6,8 +6,9 @@
     color: #afa;
     background: #222;
     border: 1px solid lime;
-    border-top-left-radius: 100px 37px;
-    border-top-right-radius: 100px 37px;
-    border-bottom-right-radius: 100px 37px;
-    border-bottom-left-radius: 100px 37px;
+    /*border-top-left-radius: 100px 37px;*/
+    /*border-top-right-radius: 100px 37px;*/
+    /*border-bottom-right-radius: 100px 37px;*/
+    /*border-bottom-left-radius: 100px 37px;*/
+    clip-path: polygon(25px 0, calc(100% - 25px) 0, 100% 50%, calc(100% - 25px) 100%, 25px 100%, 0 50%);
 }

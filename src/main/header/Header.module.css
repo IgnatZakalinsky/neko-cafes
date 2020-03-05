@@ -1,5 +1,6 @@
 .header {
     position: fixed;
+    z-index: 101;
     height: 40px;
     top: 0;
     width: 100vw;

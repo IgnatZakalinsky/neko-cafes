@@ -15,6 +15,10 @@ const Chats: React.FC<ChatsProps> = ({closeNavBar}) => {
         {_id: '1', title: 'Minsk', folderId: '0'},
         {_id: '2', title: 'Nya', folderId: '1'},
         {_id: '3', title: "McDonald's", folderId: '1'},
+        {_id: '6', title: "hz", folderId: '1'},
+        {_id: '7', title: "porno", folderId: '1'},
+        {_id: '8', title: "anime", folderId: '1'},
+        {_id: '9', title: "hentai", folderId: '1'},
         {_id: '4', title: "it-incubator", folderId: '3'},
         {_id: '5', title: "Neko Nyakus", folderId: '2'},
     ];
