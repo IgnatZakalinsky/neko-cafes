@@ -1,0 +1,4 @@
+.chatFolders {
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,13 @@
+.chatFolder, .end {
+    padding: 10px 25px;
+    min-width: 50px;
+
+    border-top-left-radius: 100px 37px;
+    border-top-right-radius: 100px 37px;
+    border-bottom-right-radius: 100px 37px;
+    border-bottom-left-radius: 100px 37px;
+}
+
+.end {
+    background: #333;
+}

@@ -3,9 +3,13 @@ import ProfileInfo from "./profile-info/ProfileInfo";
 import s from './Profile.module.css';
 import Comments from "./comments/Comments";
 
-const Profile = () => {
+type ProfileProps = {
+    closeNavBar: () => void;
+}
+
+const Profile: React.FC<ProfileProps> = ({closeNavBar}) => {
     return (
-        <div className={s.profile}>
+        <div className={s.profile} onClick={closeNavBar}>
             <ProfileInfo/>
 
             <Comments/>
