@@ -1,19 +1,21 @@
 import React from 'react';
 import s from './ProfileInfo.module.css';
+import {ProfileInfoType} from "../bll/profileState";
 
-const ProfileInfo = () => {
+type ProfileInfoProps = {
+    profileInfo: ProfileInfoType;
+}
+
+const ProfileInfo: React.FC<ProfileInfoProps> = ({profileInfo}) => {
+
     return (
         <div className={s.profileInfo}>
             <div className={s.avatar}>
-                <img
-                    src={'https://i.pinimg.com/236x/d5/5d/13/d55d13b20b736ae5901218587af9c535.jpg'}
-                    alt={'avatar'}
-                    width={300}
-                />
+                <img src={profileInfo.avatar} alt={'avatar'} width={300}/>
             </div>
             <div className={s.info}>
                 <div>
-                    name: Neko Nyakus
+                    name: {profileInfo.name}
                 </div>
             </div>
         </div>

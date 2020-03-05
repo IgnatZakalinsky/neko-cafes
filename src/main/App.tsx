@@ -4,6 +4,8 @@ import Header from "./header/Header";
 import NavBar from "./navbar/NavBar";
 import {HashRouter} from "react-router-dom";
 import Routes from "./routes/Routes";
+import {Provider} from "react-redux";
+import {store} from "./store/store";
 
 const App = () => {
     const [showNavBar, setShowNavBar] = useState(false);
@@ -13,18 +15,19 @@ const App = () => {
     };
 
     return (
-        <HashRouter>
-            <div className={s.App}>
-                <Header setShowNavBar={() => setShowNavBar(!showNavBar)}/>
+        <Provider store={store}>
+            <HashRouter>
+                <div className={s.App}>
+                    <Header setShowNavBar={() => setShowNavBar(!showNavBar)}/>
 
-                <div className={s.page}>
-                    {showNavBar && <NavBar/>}
+                    <div className={s.page}>
+                        {showNavBar && <NavBar/>}
 
-                    <Routes closeNavBar={closeNavBar}/>
+                        <Routes closeNavBar={closeNavBar}/>
+                    </div>
                 </div>
-            </div>
-        </HashRouter>
-
+            </HashRouter>
+        </Provider>
     );
 };
 

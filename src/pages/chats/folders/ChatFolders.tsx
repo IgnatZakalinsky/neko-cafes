@@ -1,21 +1,15 @@
 import React from "react";
 import s from './ChatFolders.module.css';
 import ChatFolder from "./folder/ChatFolder";
-import {ADD_FOLDER} from "../Chats";
+import {ChatFoldersType} from "../bll/chatsState";
 
 type ChatFoldersProps = {
     checkFolderId: (folderId: string) => void;
     checkedFolderId: string;
+    folders: ChatFoldersType[];
 }
 
-const ChatFolders: React.FC<ChatFoldersProps> = ({checkFolderId, checkedFolderId}) => {
-    const folders = [
-        {_id: '0', title: 'def'},
-        {_id: '1', title: 'fun'},
-        {_id: '2', title: 'ls'},
-        {_id: '3', title: 'work'},
-        {_id: ADD_FOLDER, title: ADD_FOLDER},
-    ];
+const ChatFolders: React.FC<ChatFoldersProps> = ({checkFolderId, checkedFolderId, folders}) => {
 
     const mappedFolders = folders.map((f, i) => (
         <ChatFolder

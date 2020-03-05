@@ -1,5 +1,5 @@
 import React from "react";
-import Chats from "../../pages/chats/Chats";
+import ChatsPage from "../../pages/chats/ChatsPage";
 import {Switch, Route, Redirect} from "react-router-dom";
 import Profile from "../../pages/profile/Profile";
 import Error404Page from "./error404/Error404Page";
@@ -21,8 +21,8 @@ const Routes: React.FC<RoutesProps> = ({closeNavBar}) => {
 
             <Route path={PROFILE_PATH} render={() => <Profile closeNavBar={closeNavBar}/>}/>
 
-            <Route path={CHATS_PATH + '/:id'} render={() => <Chats closeNavBar={closeNavBar}/>}/>
-            <Route path={CHATS_PATH} render={() => <Chats closeNavBar={closeNavBar}/>}/>
+            <Route path={CHATS_PATH + '/:id'} render={() => <ChatsPage closeNavBar={closeNavBar}/>}/>
+            <Route path={CHATS_PATH} render={() => <ChatsPage closeNavBar={closeNavBar}/>}/>
 
             <Route render={() => <Error404Page closeNavBar={closeNavBar}/>}/>
         </Switch>

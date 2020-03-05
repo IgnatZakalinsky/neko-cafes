@@ -1,7 +1,7 @@
 import React from "react";
 import s from './Chat.module.css';
 import {NavLink} from "react-router-dom";
-import {CHATS_PATH} from "../../../main/routes/Routes";
+import {CHATS_PATH} from "../../../../main/routes/Routes";
 
 type ChatProps = {
     title: string;

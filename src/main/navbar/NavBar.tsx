@@ -17,6 +17,7 @@ const navLinks = [
 const NavBar = () => {
     const [checked, check] = useState(navLinks[2]);
 
+    // get info from url
     const location = useLocation();
     const path = location.pathname.split('/');
     if ('/' + path[1] !== checked.to) {
