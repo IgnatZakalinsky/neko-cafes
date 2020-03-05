@@ -3,6 +3,7 @@ import s from './Chats.module.css'
 import Chat from "./chat/Chat";
 import ChatFolders from "./folders/ChatFolders";
 import Messages from "./messages/Messages";
+import {useLocation} from "react-router-dom";
 
 export const CHECK_CHAT = 'check chat';
 export const ADD_FOLDER = 'add new';
@@ -26,9 +27,19 @@ const Chats: React.FC<ChatsProps> = ({closeNavBar}) => {
     const [checkedFolderId, checkFolderId] = useState('0');
     const [checkedChatId, checkChatId] = useState('0');
 
+    const location = useLocation();
+    const path = location.pathname.split('/');
+    if (path[2] !== checkedChatId) checkChatId(path[2]);
+
     const filteredMappedChats = chats.filter(c => c.folderId === checkedFolderId)
         .map(c => (
-            <Chat key={c._id} title={c.title} checkChatId={() => checkChatId(c._id)} checked={checkedChatId === c._id}/>
+            <Chat
+                key={c._id}
+                title={c.title}
+                checkChatId={() => checkChatId(c._id)}
+                checked={checkedChatId === c._id}
+                _id={c._id}
+            />
         ));
 
     // if adding new folder

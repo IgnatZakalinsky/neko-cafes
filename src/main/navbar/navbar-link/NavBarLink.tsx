@@ -21,6 +21,7 @@ const NavBarLink: React.FC<NavBarLinkProps> = ({check, checked, title, last, to}
                 marginRight: last ? 20 : undefined,
             }}
             className={s.link}
+            activeClassName={s.active}
             onClick={check}
         >
             {title}

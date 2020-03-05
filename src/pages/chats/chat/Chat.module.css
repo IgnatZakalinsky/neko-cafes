@@ -1,10 +1,12 @@
 .chat, .checked {
+    text-decoration: none;
     padding: 10px 25px;
     margin: 3px;
     display: flex;
     justify-content: space-between;
 
     background: #111;
+    color: #aaffaa;
     /*border-top-left-radius: 100px 37px;*/
     /*border-top-right-radius: 100px 37px;*/
     /*border-bottom-right-radius: 100px 37px;*/

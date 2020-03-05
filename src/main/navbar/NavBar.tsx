@@ -16,9 +16,13 @@ const navLinks = [
 
 const NavBar = () => {
     const [checked, check] = useState(navLinks[2]);
+
     const location = useLocation();
-    if (location.pathname !== checked.to)
-        check(navLinks.find(n => n.to === location.pathname) || navLinks[2]);
+    const path = location.pathname.split('/');
+    if ('/' + path[1] !== checked.to) {
+        const newPath = navLinks.find(n => n.to === '/' + path[1]) || {title: 'Error', to: '/' + path[1]};
+        check(newPath);
+    }
 
     const mappedNavLinks = navLinks.map((n, i) =>
         <NavBarLink

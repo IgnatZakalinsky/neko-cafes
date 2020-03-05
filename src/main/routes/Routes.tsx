@@ -18,7 +18,10 @@ const Routes: React.FC<RoutesProps> = ({closeNavBar}) => {
             <Route path={'/'} exact render={() => <Redirect to={PROFILE_PATH}/>}/>
 
             <Route path={MAP_PATH} render={() => <div>map</div>}/>
+
             <Route path={PROFILE_PATH} render={() => <Profile closeNavBar={closeNavBar}/>}/>
+
+            <Route path={CHATS_PATH + '/:id'} render={() => <Chats closeNavBar={closeNavBar}/>}/>
             <Route path={CHATS_PATH} render={() => <Chats closeNavBar={closeNavBar}/>}/>
 
             <Route render={() => <Error404Page closeNavBar={closeNavBar}/>}/>
