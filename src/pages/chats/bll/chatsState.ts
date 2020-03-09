@@ -34,6 +34,8 @@ export const chatsInitialState: ChatsStateType = {
         {_id: '4', message: 'Just DO it!', chatId: '4'},
         {_id: '5', message: 'hi!', chatId: '5'},
         {_id: '6', message: 'what is your name?', chatId: '5'},
+        {_id: '7', message: 'test xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', chatId: '8'},
+        {_id: '8', message: 'testx testx testx testx testx testx testx testx testx testx testx testx ', chatId: '8'},
     ],
 
 };

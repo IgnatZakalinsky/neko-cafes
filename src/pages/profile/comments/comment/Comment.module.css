@@ -3,8 +3,54 @@
     margin: 3px;
 
     background: #111;
-    border-top-left-radius: 100px 37px;
-    border-top-right-radius: 100px 37px;
-    border-bottom-right-radius: 100px 37px;
-    border-bottom-left-radius: 100px 37px;
+    /*border-top-left-radius: 100px 37px;*/
+    /*border-top-right-radius: 100px 37px;*/
+    /*border-bottom-right-radius: 100px 37px;*/
+    /*border-bottom-left-radius: 100px 37px;*/
+    /*clip-path: polygon(25px 0, calc(100% - 25px) 0, 100% 50%, calc(100% - 25px) 100%, 25px 100%, 0 50%);*/
+}
+
+.messageNew {
+    display: flex;
+    align-items: flex-end;
+}
+
+.userPhoto {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.mBody {
+    color: #f95;
+    font-weight: bold;
+    min-width: 150px;
+    max-width: 240px;
+    padding: 7px;
+    margin: 3px;
+
+    border-radius: 5px 5px 5px 0;
+    background: #111;
+}
+
+.p {
+    font-weight: normal;
+    word-break: break-word;
+    color: #afa;
+}
+
+.time {
+    text-align: right;
+    position: relative;
+    font-weight: normal;
+    color: #555;
+}
+
+.triangle {
+    position: relative;
+    border: 10px solid transparent;
+    border-right: 0 solid #111;
+    border-bottom: 10px solid #111;
+    left: 3px;
+    bottom: 3px;
 }
