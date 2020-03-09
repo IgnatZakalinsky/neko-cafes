@@ -15,7 +15,7 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-    const [checked, check] = useState(navLinks[2]);
+    const [checked, check] = useState(navLinks[0]);
 
     // get info from url
     const location = useLocation();

@@ -6,14 +6,14 @@ import {useSelector} from "react-redux";
 import {AppStoreType} from "../../main/store/store";
 
 type ProfileProps = {
-    closeNavBar: () => void;
+
 }
 
-const Profile: React.FC<ProfileProps> = ({closeNavBar}) => {
+const Profile: React.FC<ProfileProps> = () => {
     const {profileInfo, comments} = useSelector((store: AppStoreType) => store.profile);
 
     return (
-        <div className={s.profile} onClick={closeNavBar}>
+        <div className={s.profile}>
             <ProfileInfo profileInfo={profileInfo}/>
 
             <Comments comments={comments}/>

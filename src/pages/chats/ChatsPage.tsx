@@ -2,20 +2,19 @@ import React, {useState} from "react";
 import s from './Chats.module.css';
 import ChatFolders from "./folders/ChatFolders";
 import Messages from "./messages/Messages";
-import {useLocation, useHistory} from "react-router-dom";
+import {useLocation} from "react-router-dom";
 import Chats from "./chats/Chats";
 import {useSelector} from "react-redux";
 import {AppStoreType} from "../../main/store/store";
-import {CHATS_PATH} from "../../main/routes/Routes";
 
 export const CHECK_CHAT = 'check chat';
-export const ADD_FOLDER = 'add new';
+export const ADD_NEW = 'add new';
 
 type ChatsProps = {
-    closeNavBar: () => void;
+
 }
 
-const ChatsPage: React.FC<ChatsProps> = ({closeNavBar}) => {
+const ChatsPage: React.FC<ChatsProps> = () => {
     const {chats, chatFolders, messages} = useSelector((store: AppStoreType) => store.chats);
     const [checkedFolderId, checkFolderId] = useState('0');
     const [checkedChatId, checkChatId] = useState('0');
@@ -23,20 +22,16 @@ const ChatsPage: React.FC<ChatsProps> = ({closeNavBar}) => {
     // get info from url
     const location = useLocation();
     const path = location.pathname.split('/');
-    if (path[2] !== checkedChatId && checkedFolderId !== ADD_FOLDER) checkChatId(path[2]);
+    if (path[2] !== checkedChatId && checkedFolderId !== ADD_NEW) checkChatId(path[2]);
 
-    // if adding new folder
-    const history = useHistory();
-    if (checkedFolderId === ADD_FOLDER && checkedChatId !== '0') {
-        checkChatId('0');
-        history.push(CHATS_PATH);
-    }
+    // if adding new
+    if (checkedFolderId === ADD_NEW && checkedChatId !== '0') checkChatId('0');
 
     // logic for unchecked chat
     const checkedChat = chats.find(c => c._id === checkedChatId);
 
     return (
-        <div className={s.chats} onClick={closeNavBar}>
+        <div className={s.chats}>
             <ChatFolders checkFolderId={checkFolderId} checkedFolderId={checkedFolderId} folders={chatFolders}/>
 
             <Chats

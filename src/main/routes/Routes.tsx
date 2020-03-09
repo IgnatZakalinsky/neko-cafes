@@ -9,22 +9,22 @@ export const PROFILE_PATH = '/profile';
 export const CHATS_PATH = '/chats';
 
 type RoutesProps = {
-    closeNavBar: () => void;
+
 }
 
-const Routes: React.FC<RoutesProps> = ({closeNavBar}) => {
+const Routes: React.FC<RoutesProps> = () => {
     return (
         <Switch>
             <Route path={'/'} exact render={() => <Redirect to={PROFILE_PATH}/>}/>
 
-            <Route path={MAP_PATH} render={() => <div>map</div>}/>
+            <Route path={MAP_PATH} render={() => <div style={{height: '90vh'}}>map</div>}/>
 
-            <Route path={PROFILE_PATH} render={() => <Profile closeNavBar={closeNavBar}/>}/>
+            <Route path={PROFILE_PATH} render={() => <Profile/>}/>
 
-            <Route path={CHATS_PATH + '/:id'} render={() => <ChatsPage closeNavBar={closeNavBar}/>}/>
-            <Route path={CHATS_PATH} render={() => <ChatsPage closeNavBar={closeNavBar}/>}/>
+            <Route path={CHATS_PATH + '/:id'} render={() => <ChatsPage/>}/>
+            <Route path={CHATS_PATH} render={() => <ChatsPage/>}/>
 
-            <Route render={() => <Error404Page closeNavBar={closeNavBar}/>}/>
+            <Route render={() => <Error404Page/>}/>
         </Switch>
     );
 };

@@ -23,7 +23,9 @@ const App = () => {
                     <div className={s.page}>
                         {showNavBar && <NavBar/>}
 
-                        <Routes closeNavBar={closeNavBar}/>
+                        <div onClick={closeNavBar}>
+                            <Routes/>
+                        </div>
                     </div>
                 </div>
             </HashRouter>

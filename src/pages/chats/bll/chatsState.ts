@@ -1,4 +1,4 @@
-import {ADD_FOLDER} from "../ChatsPage";
+import {ADD_NEW} from "../ChatsPage";
 
 export type ChatsStateType = {
     chats: ChatType[];
@@ -24,7 +24,7 @@ export const chatsInitialState: ChatsStateType = {
         {_id: '1', title: 'fun'},
         {_id: '2', title: 'ls'},
         {_id: '3', title: 'work'},
-        {_id: ADD_FOLDER, title: ADD_FOLDER},
+        {_id: ADD_NEW, title: ADD_NEW},
     ],
     messages: [
         {_id: '0', message: 'hi Minsk!', chatId: '1'},
