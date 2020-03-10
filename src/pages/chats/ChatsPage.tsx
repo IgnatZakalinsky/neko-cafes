@@ -45,6 +45,7 @@ const ChatsPage: React.FC<ChatsProps> = () => {
                 checkedChatId={checkedChatId}
                 chatName={checkedChat ? checkedChat.title : CHECK_CHAT}
                 messages={messages}
+                send={(message) => alert(message)}
             />
         </div>
     )

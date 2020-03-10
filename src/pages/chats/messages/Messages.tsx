@@ -3,15 +3,16 @@ import Message from "./message/Message";
 import s from './Messages.module.css';
 import {CHECK_CHAT} from "../ChatsPage";
 import {MessageType} from "../bll/chatsState";
-import AddMessage from "./add-comment/AddMessage";
+import AddMessage from "../add-message/AddMessage";
 
 type MessagesProps = {
     checkedChatId: string;
     chatName: string;
     messages: MessageType[];
+    send: (message: string) => void;
 }
 
-const Messages: React.FC<MessagesProps> = ({checkedChatId, chatName, messages}) => {
+const Messages: React.FC<MessagesProps> = ({checkedChatId, chatName, messages, send}) => {
 
     const filteredMappedMessages = messages.filter(m => m.chatId === checkedChatId)
         .map(m => (
@@ -30,7 +31,7 @@ const Messages: React.FC<MessagesProps> = ({checkedChatId, chatName, messages}) 
                 <div>
                     {filteredMappedMessages}
                 </div>
-                <AddMessage/>
+                <AddMessage send={send}/>
             </>
             }
         </div>
