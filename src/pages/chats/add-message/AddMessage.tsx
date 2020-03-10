@@ -8,10 +8,15 @@ type AddMessageProps = {
 const AddMessage: React.FC<AddMessageProps> = ({send}) => {
     const [message, setMessage] = useState('');
 
+    const sendCallback = () => {
+        send(message);
+        setMessage('');
+    };
+
     return (
         <div className={s.addComment}>
-            <textarea className={s.textarea} onChange={e => setMessage(e.currentTarget.value)}/>
-            <button className={s.button} onClick={() => send(message)}>send</button>
+            <textarea className={s.textarea} value={message} onChange={e => setMessage(e.currentTarget.value)}/>
+            <button className={s.button} onClick={sendCallback}>send</button>
         </div>
     );
 };

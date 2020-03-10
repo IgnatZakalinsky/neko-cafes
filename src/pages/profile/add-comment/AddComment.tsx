@@ -8,10 +8,15 @@ type AddCommentProps = {
 const AddComment: React.FC<AddCommentProps> = ({send}) => {
     const [comment, setComment] = useState('');
 
+    const sendCallback = () => {
+        send(comment);
+        setComment('');
+    };
+
     return (
         <div className={s.addComment}>
-            <textarea className={s.textarea} onChange={e => setComment(e.currentTarget.value)}/>
-            <button className={s.button} onClick={() => send(comment)}>send</button>
+            <textarea className={s.textarea} value={comment} onChange={e => setComment(e.currentTarget.value)}/>
+            <button className={s.button} onClick={sendCallback}>send</button>
         </div>
     );
 };
