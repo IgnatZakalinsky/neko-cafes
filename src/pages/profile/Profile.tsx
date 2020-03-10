@@ -4,6 +4,7 @@ import s from './Profile.module.css';
 import Comments from "./comments/Comments";
 import {useSelector} from "react-redux";
 import {AppStoreType} from "../../main/store/store";
+import AddComment from "./add-comment/AddComment";
 
 type ProfileProps = {
 
@@ -15,6 +16,8 @@ const Profile: React.FC<ProfileProps> = () => {
     return (
         <div className={s.profile}>
             <ProfileInfo profileInfo={profileInfo}/>
+
+            <AddComment/>
 
             <Comments comments={comments}/>
         </div>

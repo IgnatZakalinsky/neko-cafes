@@ -3,6 +3,7 @@ import Message from "./message/Message";
 import s from './Messages.module.css';
 import {CHECK_CHAT} from "../ChatsPage";
 import {MessageType} from "../bll/chatsState";
+import AddMessage from "./add-comment/AddMessage";
 
 type MessagesProps = {
     checkedChatId: string;
@@ -29,6 +30,7 @@ const Messages: React.FC<MessagesProps> = ({checkedChatId, chatName, messages}) 
                 <div>
                     {filteredMappedMessages}
                 </div>
+                <AddMessage/>
             </>
             }
         </div>

@@ -1,0 +1,36 @@
+.addComment {
+    margin-top: 10px;
+    padding: 10px;
+    height: 100px;
+    background: #111;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.textarea {
+    resize: unset;
+    height: 90px;
+    padding: 5px;
+    width: 70%;
+    background: #333;
+    color: #afa;
+    border: 1px solid transparent;
+}
+
+.textarea:focus {
+    border: 1px solid #f95;
+}
+
+.button {
+    font-weight: bold;
+
+    padding: 5px 15px;
+    clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
+
+    background: #0f0;
+}
+
+.button:active {
+    background: #333;
+}

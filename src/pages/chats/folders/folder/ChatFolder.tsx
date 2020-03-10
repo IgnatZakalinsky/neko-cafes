@@ -19,6 +19,7 @@ const ChatFolder: React.FC<ChatFoldersProps> = ({checkFolderId, checked, title, 
             className={end ? s.end : s.chatFolder}
         >
             {title}
+            <span className={s.button}>/\</span>
         </NavLink>
     );
 };
