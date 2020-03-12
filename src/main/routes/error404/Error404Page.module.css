@@ -1,7 +1,10 @@
-.text {
+.text
+{
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+
     height: 90vh;
-    color: #55ff55;
+
+    color: #5f5;
 }

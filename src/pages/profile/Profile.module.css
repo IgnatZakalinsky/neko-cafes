@@ -1,7 +1,8 @@
-.profile {
-    padding: 10px;
+.profile
+{
     min-height: calc(100vh - 60px);
+    padding: 10px;
 
-    background: #222;
     color: #afa;
+    background: #222;
 }

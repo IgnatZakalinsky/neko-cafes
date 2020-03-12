@@ -1,17 +1,22 @@
-.profileInfo {
+.profileInfo
+{
     display: flex;
     flex-wrap: wrap;
 }
 
-.avatar {
-    border: 2px solid lime;
+.avatar
+{
     max-width: 300px;
+
+    border: 2px solid lime;
 }
 
-.info {
+.info
+{
+    min-width: calc(100% - 370px);
+    max-width: 300px;
     margin: 20px;
     padding: 10px;
+
     background: #111;
-    max-width: 300px;
-    min-width: calc(100% - 370px);
 }

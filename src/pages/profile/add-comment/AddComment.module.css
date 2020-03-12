@@ -1,36 +1,46 @@
-.addComment {
-    margin-top: 10px;
-    padding: 10px;
-    height: 100px;
-    background: #111;
+.addComment
+{
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    height: 100px;
+    margin-top: 10px;
+    padding: 10px;
+
+    background: #111;
 }
 
-.textarea {
-    resize: unset;
+.textarea
+{
+    width: 70%;
     height: 90px;
     padding: 5px;
-    width: 70%;
-    background: #333;
+
+    resize: unset;
+
     color: #afa;
     border: 1px solid transparent;
+    background: #333;
 }
 
-.textarea:focus {
+.textarea:focus
+{
     border: 1px solid #f95;
 }
 
-.button {
+.button
+{
     font-weight: bold;
 
     padding: 5px 15px;
-    clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
 
     background: #0f0;
+
+    clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
 }
 
-.button:active {
+.button:active
+{
     background: #333;
 }

@@ -1,14 +1,17 @@
-.menu {
-    margin: 4px 20px 4px 4px;
+.menu
+{
     font-weight: bold;
 
+    margin: 4px 20px 4px 4px;
+    padding: 5px 15px;
+
     color: #afa;
-    background: #222;
     border: 1px solid lime;
+    background: #222;
+
     /*border-top-left-radius: 100px 37px;*/
     /*border-top-right-radius: 100px 37px;*/
     /*border-bottom-right-radius: 100px 37px;*/
     /*border-bottom-left-radius: 100px 37px;*/
-    padding: 5px 15px;
     clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
 }

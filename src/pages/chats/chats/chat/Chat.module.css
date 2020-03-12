@@ -1,20 +1,22 @@
-.chat, .checked {
-    text-decoration: none;
-    margin: 3px;
+.chat,
+.checked
+{
     display: flex;
     justify-content: space-between;
 
-    background: #111;
-    color: #aaffaa;
-    /*border-top-left-radius: 100px 37px;*/
-    /*border-top-right-radius: 100px 37px;*/
-    /*border-bottom-right-radius: 100px 37px;*/
-    /*border-bottom-left-radius: 100px 37px;*/
+    margin: 3px;
     padding: 5px 15px;
+
+    text-decoration: none;
+
+    color: #afa;
+    background: #111;
+
     clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
 }
 
-.checked {
-    background: #333;
+.checked
+{
     color: #f95;
+    background: #333;
 }

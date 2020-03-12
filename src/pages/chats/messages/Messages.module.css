@@ -1,22 +1,23 @@
-.chat {
-    display: flex;
-    justify-content: center;
-    margin: 4px;
+.chat
+{
     font-weight: bold;
 
-    /*color: #afa;*/
-    background: #333;
-    border: 1px solid lime;
-    /*border-top-left-radius: 100px 37px;*/
-    /*border-top-right-radius: 100px 37px;*/
-    /*border-bottom-right-radius: 100px 37px;*/
-    /*border-bottom-left-radius: 100px 37px;*/
+    display: flex;
+    justify-content: center;
+
+    margin: 4px;
     padding: 5px 15px;
+
+    border: 1px solid lime;
+    background: #333;
+
     clip-path: polygon(15px 0, calc(100% - 15px) 0, 100% 50%, calc(100% - 15px) 100%, 15px 100%, 0 50%);
 }
 
-.br {
+.br
+{
     height: 10px;
     margin: 15px 0;
-    background: #55ff55;
+
+    background: #5f5;
 }
