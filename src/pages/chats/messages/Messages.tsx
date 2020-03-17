@@ -3,9 +3,10 @@ import Message from "./message/Message";
 import s from './Messages.module.css';
 import {CHECK_CHAT} from "../ChatsPage";
 import AddMessage from "../add-message/AddMessage";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {AppStoreType} from "../../../main/store/store";
 import {ChatType} from "../bll/chatsState";
+import {addMessage} from "../bll/chartActionCreators";
 
 type MessagesProps = {
 
@@ -13,7 +14,7 @@ type MessagesProps = {
 
 const Messages: React.FC<MessagesProps> = () => {
     const {messages, checkedChatId, chats} = useSelector((store: AppStoreType) => store.chats);
-    // const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const checkedChat: ChatType | undefined = chats.find(c => c._id === checkedChatId);
     const chatName = checkedChat ? checkedChat.title : CHECK_CHAT;
@@ -37,7 +38,7 @@ const Messages: React.FC<MessagesProps> = () => {
                     {filteredMappedMessages}
                 </div>
 
-                <AddMessage send={(message) => alert(message)}/>
+                <AddMessage send={(message) => dispatch(addMessage(message))}/>
             </>
             }
         </div>
