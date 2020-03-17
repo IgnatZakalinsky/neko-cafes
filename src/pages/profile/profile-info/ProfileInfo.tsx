@@ -13,10 +13,9 @@ const ProfileInfo: React.FC<ProfileInfoProps> = ({profileInfo}) => {
             <div className={s.avatar}>
                 <img src={profileInfo.avatar} alt={'avatar'} width={300}/>
             </div>
+
             <div className={s.info}>
-                <div>
-                    name: {profileInfo.name}
-                </div>
+                name: {profileInfo.name}
             </div>
         </div>
     );

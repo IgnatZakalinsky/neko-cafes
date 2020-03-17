@@ -6,15 +6,19 @@ type NavBarLinkProps = {
     checked: boolean;
     check: () => void;
     last: boolean;
-    title: string;
-    to: string;
+    navLink: {
+        title: string;
+        to: string;
+    };
 }
 
-const NavBarLink: React.FC<NavBarLinkProps> = ({check, checked, title, last, to}) => {
+const NavBarLink: React.FC<NavBarLinkProps> = (
+    {check, checked, last, navLink}
+) => {
 
     return (
         <NavLink
-            to={to}
+            to={navLink.to}
             style={{
                 color: checked ? '#f95' : '#111',
                 background: checked ? '#111' : undefined,
@@ -24,7 +28,7 @@ const NavBarLink: React.FC<NavBarLinkProps> = ({check, checked, title, last, to}
             activeClassName={s.active}
             onClick={check}
         >
-            {title}
+            {navLink.title}
         </NavLink>
     );
 };

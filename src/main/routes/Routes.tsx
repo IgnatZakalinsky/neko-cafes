@@ -15,7 +15,7 @@ type RoutesProps = {
 const Routes: React.FC<RoutesProps> = () => {
     return (
         <Switch>
-            <Route path={'/'} exact render={() => <Redirect to={PROFILE_PATH}/>}/>
+            <Route path={'/'} exact render={() => <Redirect to={MAP_PATH}/>}/>
 
             <Route path={MAP_PATH} render={() => <div style={{height: '90vh'}}>map</div>}/>
 

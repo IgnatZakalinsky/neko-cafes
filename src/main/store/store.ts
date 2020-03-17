@@ -1,6 +1,6 @@
 import {applyMiddleware, combineReducers, createStore,} from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import { takeEvery } from 'redux-saga/effects';
+// import { takeEvery } from 'redux-saga/effects';
 import  thunkMiddleware from "redux-thunk"
 import {profileReducer} from "../../pages/profile/bll/profileReducer";
 import {chatsReducer} from "../../pages/chats/bll/chatsReducer";

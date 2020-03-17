@@ -17,7 +17,7 @@ const Profile: React.FC<ProfileProps> = () => {
         <div className={s.profile}>
             <ProfileInfo profileInfo={profileInfo}/>
 
-            <AddComment send={(message) => alert(message)}/>
+            <AddComment send={(comment) => alert(comment)}/>
 
             <Comments comments={comments}/>
         </div>

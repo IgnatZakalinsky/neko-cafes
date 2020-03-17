@@ -6,9 +6,10 @@ import {useLocation} from "react-router-dom";
 import Chats from "./chats/Chats";
 import {useSelector} from "react-redux";
 import {AppStoreType} from "../../main/store/store";
+import {ChatType} from "./bll/chatsState";
 
 export const CHECK_CHAT = 'check chat';
-export const ADD_NEW = 'add new';
+export const ADD_NEW = 'add new'; // chat/folder/else...
 
 type ChatsProps = {
 
@@ -16,8 +17,9 @@ type ChatsProps = {
 
 const ChatsPage: React.FC<ChatsProps> = () => {
     const {chats, chatFolders, messages} = useSelector((store: AppStoreType) => store.chats);
-    const [checkedFolderId, checkFolderId] = useState('0');
-    const [checkedChatId, checkChatId] = useState('0');
+
+    const [checkedFolderId, checkFolderId] = useState('0'); // save in redux
+    const [checkedChatId, checkChatId] = useState('0'); // save in redux
 
     // get info from url
     const location = useLocation();
@@ -28,7 +30,7 @@ const ChatsPage: React.FC<ChatsProps> = () => {
     if (checkedFolderId === ADD_NEW && checkedChatId !== '0') checkChatId('0');
 
     // logic for unchecked chat
-    const checkedChat = chats.find(c => c._id === checkedChatId);
+    const checkedChat: ChatType | undefined = chats.find(c => c._id === checkedChatId);
 
     return (
         <div className={s.chats}>

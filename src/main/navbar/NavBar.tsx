@@ -15,24 +15,27 @@ const navLinks = [
 ];
 
 const NavBar = () => {
-    const [checked, check] = useState(navLinks[0]);
+    const [checkedNavLink, checkNavLink] = useState(navLinks[0]);
 
     // get info from url
     const location = useLocation();
     const path = location.pathname.split('/');
-    if ('/' + path[1] !== checked.to) {
-        const newPath = navLinks.find(n => n.to === '/' + path[1]) || {title: 'Error', to: '/' + path[1]};
-        check(newPath);
+
+    if ('/' + path[1] !== checkedNavLink.to) {
+
+        const newNavLink = navLinks.find(n => n.to === '/' + path[1])
+            || {title: 'Error', to: '/' + path[1]};
+
+        checkNavLink(newNavLink);
     }
 
     const mappedNavLinks = navLinks.map((n, i) =>
         <NavBarLink
-            key={'NavBar-key-' + i}
-            check={() => check(n)}
-            title={n.title}
-            checked={checked === n}
+            key={'NavBarLink-key-' + i}
+            check={() => checkNavLink(n)}
+            navLink={n}
+            checked={checkedNavLink === n}
             last={i === navLinks.length - 1}
-            to={n.to}
         />
     );
 

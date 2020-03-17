@@ -25,12 +25,14 @@ const Messages: React.FC<MessagesProps> = ({checkedChatId, chatName, messages, s
             <div className={s.chat}>
                 {chatName}
             </div>
+
             {chatName !== CHECK_CHAT &&
             <>
                 messages:
                 <div>
                     {filteredMappedMessages}
                 </div>
+
                 <AddMessage send={send}/>
             </>
             }

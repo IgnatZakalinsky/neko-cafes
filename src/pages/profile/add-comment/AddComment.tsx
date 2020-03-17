@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import s from './AddComment.module.css';
 
 type AddCommentProps = {
-    send: (message: string) => void;
+    send: (comment: string) => void;
 }
 
 const AddComment: React.FC<AddCommentProps> = ({send}) => {

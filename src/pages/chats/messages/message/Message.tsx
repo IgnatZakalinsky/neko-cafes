@@ -14,6 +14,7 @@ const Message: React.FC<MessageProps> = ({message}) => {
                 alt="avatar"
                 className={s.userPhoto}
             />
+
             <div className={s.triangle}/>
             <div className={s.mBody}>
                 {'Name'}
