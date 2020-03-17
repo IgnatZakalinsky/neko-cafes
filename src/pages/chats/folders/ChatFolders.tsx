@@ -1,23 +1,25 @@
 import React from "react";
 import s from './ChatFolders.module.css';
 import ChatFolder from "./folder/ChatFolder";
-import {ChatFoldersType} from "../bll/chatsState";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStoreType} from "../../../main/store/store";
+import {setFolderId} from "../bll/chartActionCreators";
 
 type ChatFoldersProps = {
-    checkFolderId: (folderId: string) => void;
-    checkedFolderId: string;
-    folders: ChatFoldersType[];
+
 }
 
-const ChatFolders: React.FC<ChatFoldersProps> = ({checkFolderId, checkedFolderId, folders}) => {
+const ChatFolders: React.FC<ChatFoldersProps> = () => {
+    const {chatFolders, checkedFolderId} = useSelector((store: AppStoreType) => store.chats);
+    const dispatch = useDispatch();
 
-    const mappedFolders = folders.map((f, i) => (
+    const mappedFolders = chatFolders.map((f, i) => (
         <ChatFolder
             key={f._id}
-            checkFolderId={() => checkFolderId(f._id)}
+            checkFolderId={() => dispatch(setFolderId(f._id))}
             checked={checkedFolderId === f._id}
             title={f.title}
-            end={i === folders.length - 1}
+            end={i === chatFolders.length - 1}
         />
     ));
 

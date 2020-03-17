@@ -2,17 +2,21 @@ import React from "react";
 import Message from "./message/Message";
 import s from './Messages.module.css';
 import {CHECK_CHAT} from "../ChatsPage";
-import {MessageType} from "../bll/chatsState";
 import AddMessage from "../add-message/AddMessage";
+import {useSelector} from "react-redux";
+import {AppStoreType} from "../../../main/store/store";
+import {ChatType} from "../bll/chatsState";
 
 type MessagesProps = {
-    checkedChatId: string;
-    chatName: string;
-    messages: MessageType[];
-    send: (message: string) => void;
+
 }
 
-const Messages: React.FC<MessagesProps> = ({checkedChatId, chatName, messages, send}) => {
+const Messages: React.FC<MessagesProps> = () => {
+    const {messages, checkedChatId, chats} = useSelector((store: AppStoreType) => store.chats);
+    // const dispatch = useDispatch();
+
+    const checkedChat: ChatType | undefined = chats.find(c => c._id === checkedChatId);
+    const chatName = checkedChat ? checkedChat.title : CHECK_CHAT;
 
     const filteredMappedMessages = messages.filter(m => m.chatId === checkedChatId)
         .map(m => (
@@ -33,7 +37,7 @@ const Messages: React.FC<MessagesProps> = ({checkedChatId, chatName, messages, s
                     {filteredMappedMessages}
                 </div>
 
-                <AddMessage send={send}/>
+                <AddMessage send={(message) => alert(message)}/>
             </>
             }
         </div>

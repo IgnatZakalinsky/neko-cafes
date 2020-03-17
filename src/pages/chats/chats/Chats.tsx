@@ -1,24 +1,23 @@
 import React from "react";
 import Chat from "./chat/Chat";
-import {ChatType} from "../bll/chatsState";
+import {useDispatch, useSelector} from "react-redux";
+import {AppStoreType} from "../../../main/store/store";
+import {setChatId} from "../bll/chartActionCreators";
 
 type ChatsProps = {
-    chats: ChatType[];
-    checkedFolderId: string;
-    checkChatId: (chatId: string) => void;
-    checkedChatId: string
+
 }
 
-const Chats: React.FC<ChatsProps> = (
-    {chats, checkChatId, checkedFolderId, checkedChatId}
-) => {
+const Chats: React.FC<ChatsProps> = () => {
+    const {chats, checkedFolderId, checkedChatId} = useSelector((store: AppStoreType) => store.chats);
+    const dispatch = useDispatch();
 
     const filteredMappedChats = chats.filter(c => c.folderId === checkedFolderId)
         .map(c => (
             <Chat
                 key={c._id}
                 title={c.title}
-                checkChatId={() => checkChatId(c._id)}
+                checkChatId={() => dispatch(setChatId(c._id))}
                 checked={checkedChatId === c._id}
                 _id={c._id}
             />

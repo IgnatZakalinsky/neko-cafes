@@ -5,6 +5,9 @@ export type ChatsStateType = {
     chatFolders: ChatFoldersType[];
     messages: MessageType[];
 
+    checkedFolderId: string;
+    checkedChatId: string;
+
 };
 
 export const chatsInitialState: ChatsStateType = {
@@ -37,6 +40,9 @@ export const chatsInitialState: ChatsStateType = {
         {_id: '7', message: 'test xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx', chatId: '8'},
         {_id: '8', message: 'testx testx testx testx testx testx testx testx testx testx testx testx ', chatId: '8'},
     ],
+
+    checkedChatId: '0',
+    checkedFolderId: '0',
 
 };
 
